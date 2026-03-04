@@ -2,6 +2,11 @@
 import json
 import pandas as pd
 import openeo
+import os
+
+
+output_dir = "Outputs"
+os.makedirs(output_dir, exist_ok=True)
 
 # Connect to openEO
 conn = openeo.connect(url="openeo.dataspace.copernicus.eu")
