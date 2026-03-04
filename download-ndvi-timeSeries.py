@@ -60,10 +60,10 @@ timeseries = ndvi_s2.aggregate_temporal_period("month", reducer="median").aggreg
 # Download time series
 job = timeseries.execute_batch(out_format="CSV", title="NDVI timeseries")
 
-job.get_results().download_file("../../Outputs/timeseries-mean-monthly-ndvi.csv")
+job.get_results().download_file("Outputs/timeseries-mean-monthly-ndvi.csv")
 
 # Read time series as dataFrame
-pd.read_csv("../../Outputs/timeseries-mean-monthly-ndvi.csv", index_col=0).head()
+pd.read_csv("Outputs/timeseries-mean-monthly-ndvi.csv", index_col=0).head()
 
 #Call a function that:
 #.Smooths NDVI values appling the Savitzky–Golay
@@ -72,7 +72,7 @@ pd.read_csv("../../Outputs/timeseries-mean-monthly-ndvi.csv", index_col=0).head(
 
 from phenology_utils import smooth_and_plot_ndvi
 
-csv_file = "../../Outputs/timeseries-mean-monthly-ndvi.csv"
+csv_file = "Outputs/timeseries-mean-monthly-ndvi.csv"
 
 df, smoothed = smooth_and_plot_ndvi(
     csv_file,
