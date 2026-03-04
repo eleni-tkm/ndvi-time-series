@@ -80,7 +80,7 @@ Main function:
 - Loads the NDVI CSV
 - Sorts values by date
 - Applies Savitzky–Golay smoothing
-- Saves a new file with suffix `_smoothed.csv`
+- Saves a new file with suffix `_smoothed.csv` in `Outputs` folder
 - Adds a new column `ndvi_smooth` in the new file
 - `_smoothed.csv` strusture:
 
