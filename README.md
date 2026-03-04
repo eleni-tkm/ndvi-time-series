@@ -131,3 +131,17 @@ df, smoothed = smooth_and_plot_ndvi(
       - Allows more curvature
       - May follow noise if too high
 
+# Limitations
+
+1️⃣ Entire months have no valid pixels → temporal gaps that need gap-filling techniques
+
+2️⃣ Partial pixel masking:
+  - If some images in a month are valid and others are masked:
+    - The monthly median still works
+    - But variability increases
+    - Noise increases → lower reliability
+
+3️⃣ Missing acquisitions (very few images, no valid data due to orbit/sensor issues) can be handled with:
+  - Linear Interpolation (good for small gaps: 1-2 months)
+  - Spline Interpolation
+  - Model-Based Filling (better for longer gaps)
